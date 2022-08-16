@@ -1,3 +1,6 @@
 (library
- (public_name ptreeml)
- (name ptreeml))
+ (public_name ptree)
+ (name ptree)
+ (libraries str))
+
+(include_subdirs unqualified)

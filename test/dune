@@ -1,2 +1,3 @@
 (test
- (name ptreeml))
+ (name ptreetest)
+ (libraries ounit2 ptree))
