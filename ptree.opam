@@ -33,4 +33,4 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/brandon-gong/ptree.ml.git"
+dev-repo: "git+https://github.com/brandon-gong/ptreeml.git"
