@@ -1,3 +1,0 @@
-(test
- (name ptreetest)
- (libraries ounit2 ptree))

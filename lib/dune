@@ -1,6 +1,0 @@
-(library
- (public_name ptree)
- (name ptree)
- (libraries str))
-
-(include_subdirs unqualified)
