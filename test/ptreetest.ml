@@ -38,7 +38,7 @@ let depth_two = depth_one
   |> root
 
 let tests = "Ptree tests" >::: [
-  ("depth_one" >:: fun _ -> print_string (xml_of_peditor depth_two "testtag"));
+  ("depth_one" >:: fun _ -> print_string (xml_of_peditor "testtag" depth_two));
 
   (************ `depth` tests ***************)
   ("depth = 0" >:: fun _ -> assert_equal 0 (depth empty));
@@ -169,7 +169,7 @@ subf = subdata
     (json_of_peditor depth_two));
 
     (************** XML pprinting tests *****************)
-    ("xml empty" >:: fun _ -> assert_equal "<test>\n\n</test>\n" (xml_of_peditor empty "test"));
+    ("xml empty" >:: fun _ -> assert_equal "<test>\n\n</test>\n" (xml_of_peditor "test" empty));
     ("xml depth_two" >:: fun _ -> assert_equal
 "<testtag>
   <4th-field>
@@ -216,7 +216,7 @@ t
   </thirdfield>
 </testtag>
 "
-    (xml_of_peditor depth_two "testtag"));
+    (xml_of_peditor "testtag" depth_two));
   ]
 
 

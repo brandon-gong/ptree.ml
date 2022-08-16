@@ -232,7 +232,7 @@ val ini_of_peditor : peditor -> string
 		under the [peditor]) into a JSON string. The string argument specifies the
 		string used as the tab character. Please ensure that that argument consists
 		solely of whitespace; if not, invalid JSON can be returned. *)
-val json_of_peditor_tab : peditor -> string -> string
+val json_of_peditor_tab : string -> peditor -> string
 
 (** Convert the entire [ptree] pointed to by the [peditor] (not just the subtree
 		under the [peditor]) into a JSON string. A default indent of two spaces is
@@ -243,12 +243,12 @@ val json_of_peditor : peditor -> string
 		under the [peditor]) into an XML string. The string argument specifies the
 		string used as the tab character. Please ensure that that argument consists
 		solely of whitespace; if not, invalid XML can be returned. *)
-val xml_of_peditor_tab : peditor -> string -> string -> string
+val xml_of_peditor_tab : string -> string -> peditor -> string
 
 (** Convert the entire [ptree] pointed to by the [peditor] (not just the subtree
 		under the [peditor]) into an XML string. A default indent of two spaces is
 		used to pretty-print the XML. *)
-val xml_of_peditor : peditor -> string -> string
+val xml_of_peditor : string -> peditor -> string
 
 (** An enumeration of the file types currently supported by the library. *)
 type supported_types = JSON | XML | INI

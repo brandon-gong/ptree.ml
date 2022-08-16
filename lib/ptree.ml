@@ -38,7 +38,7 @@ let peditor_of_file path = peditor_of_file_type path (get_file_type path)
 let file_of_peditor_type path ftype pe =
   put_txt path @@ match ftype with
   | JSON -> json_of_peditor pe
-  | XML -> xml_of_peditor pe "data"
+  | XML -> xml_of_peditor "data" pe
   | INI -> ini_of_peditor pe
 
 let file_of_peditor path = file_of_peditor_type path (get_file_type path)

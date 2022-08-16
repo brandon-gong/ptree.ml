@@ -222,11 +222,11 @@ struct
   
   (* Get the root ptree out of the peditor, call to_str on that whole thing, and
      then append the trailing newline *)
-  let json_of_peditor_tab pe tab = (to_str tab 1 @@ get_whole_data pe) ^ "\n"
+  let json_of_peditor_tab tab pe = (to_str tab 1 @@ get_whole_data pe) ^ "\n"
 
   (* This is equivalent to calling json_of_peditor_tab pe default_tab, just a
      convenient alias if people don't really care about the tab used. *)
-  let json_of_peditor pe = json_of_peditor_tab pe default_tab
+  let json_of_peditor = json_of_peditor_tab default_tab
 end
 
 
@@ -305,11 +305,11 @@ struct
       (* Stick everything together with newlines *)
       |> String.concat "\n"
 
-  let xml_of_peditor_tab pe rootname tab =
+  let xml_of_peditor_tab rootname tab pe =
     let opening, closing = make_tags tab 0 rootname in
     opening ^ (to_str tab 1 rootname (get_whole_data pe)) ^ closing ^ "\n"
 
-  let xml_of_peditor pe rootname = xml_of_peditor_tab pe rootname default_tab
+  let xml_of_peditor rootname = xml_of_peditor_tab rootname default_tab
 
 end
 
