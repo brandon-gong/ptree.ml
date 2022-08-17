@@ -19,7 +19,7 @@ graph LR
   A-->G
 ```
 
-ptree.ml is a "universal adaptor" between the extraordinarily popular data
+ptree.ml is a "universal adaptor" between the widely-used data
 serialization formats INI, JSON, and XML for OCaml. It provides support for
 parsing any of these formats into a unified data structure, making edits /
 adding new data, and then exporting data back out to any of those file formats.
