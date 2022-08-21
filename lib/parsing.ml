@@ -43,9 +43,9 @@ let ptree_of_clst lst = string_of_clst lst |> fun s -> String s
 (* set_label simply runs the parser with the original label and, if an error
    occurs, swaps out that err's label with the one we want to set it to. *)
 let set_label p lbl =
-	let relabeled_run = fun input -> match p.run input with
-	| Ok v -> Ok v (* If it runs successfully, great! Label doesn't matter *)
-	| Error (_, p) -> Error (lbl, p) in (* Swap in new label for error *)
+  let relabeled_run = fun input -> match p.run input with
+  | Ok v -> Ok v (* If it runs successfully, great! Label doesn't matter *)
+  | Error (_, p) -> Error (lbl, p) in (* Swap in new label for error *)
   { run = relabeled_run; label = lbl }
 
 (* Also gonna be defining infix operators for a lot of different things as it's
@@ -60,7 +60,7 @@ let consume_char input =
   | Cons (f, r) ->
     let new_pos = input.pos |>
       if f == '\n' then next_line else next_col in
-    Some f, { unconsumed = r; pos = new_pos}
+    Some f, { unconsumed = r; pos = new_pos }
 
 let make_parser f =
   { run = f; label = "UNSET LABEL" }
